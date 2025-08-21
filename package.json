@@ -1,0 +1,25 @@
+{
+  "name": "kodepos-id",
+  "version": "1.0.0",
+  "description": "Aplikasi pencari kode pos Indonesia berbasis Express + scraping Google",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "kodepos",
+    "express",
+    "scraping",
+    "indonesia"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
