@@ -8,14 +8,10 @@ const cariKodePos = async (namaDaerah) => {
     });
 
     const d = await r.text()
-        const a = d.matchAll(/<div class="j039Wc"><h3 class="zBAuLc l97dzf"><div class="ilUpNd UFvD1 aSRlid">(.+?)<\/div><\/h3>/g);
-        let hm = Array.from(a).map(v => v[1]).filter(v => /\d{5}/.test(v));
-
-        // Filter out hanifmu.com results
-        hm = hm.filter(result => !result.toLowerCase().includes('hanifmu.com'));
-
-        if (!hm?.length) throw Error(`Tidak ditemukan hasil dari pencarian kode pos ${namaDaerah}`);
-        return hm;
+    const a = d.matchAll(/<div class="j039Wc"><h3 class="zBAuLc l97dzf"><div class="ilUpNd UFvD1 aSRlid">(.+?)<\/div><\/h3>/g)
+    const hm = Array.from(a).map(v => v[1]).filter(v => /\d{5}/.test(v))
+    if (!hm?.length) throw Error (`tidak ditemukan hasil dari pencarian kode pos ${namaDaerah}`)
+    return hm
     } catch (error) {
         throw new Error(`Error dalam pencarian: ${error.message}`);
     }
